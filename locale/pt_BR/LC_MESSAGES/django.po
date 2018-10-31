@@ -1,0 +1,477 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-17 15:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: foodnaut/activities/templates/activities/last_notifications.html:12
+msgid "You have no unread notification"
+msgstr "Você não possui nenhuma notificação não lida"
+
+#: foodnaut/activities/templates/activities/last_notifications.html:14
+msgid "See all"
+msgstr "Ver tudo"
+
+#: foodnaut/activities/templates/activities/notifications.html:27
+msgid "You have no notification"
+msgstr "Você não possui notificação"
+
+#: foodnaut/articles/models.py:35
+#: foodnaut/articles/templates/articles/article.html:15
+#, fuzzy
+msgid "Article"
+msgstr "Artigo"
+
+#: foodnaut/articles/models.py:36
+#: foodnaut/articles/templates/articles/article.html:14
+#: foodnaut/articles/templates/articles/articles.html:5
+#: foodnaut/articles/templates/articles/articles.html:17
+#: foodnaut/articles/templates/articles/drafts.html:11
+#: foodnaut/articles/templates/articles/edit.html:11
+#: foodnaut/articles/templates/articles/write.html:11
+#: foodnaut/core/templates/core/profile.html:30
+#: foodnaut/search/templates/search/partial_articles_results.html:3
+#: foodnaut/search/templates/search/partial_results_menu.html:9
+#: foodnaut/templates/base.html:46
+msgid "Articles"
+msgstr "Artigos"
+
+#: foodnaut/articles/models.py:86
+#, fuzzy
+msgid "Article Comment"
+msgstr "Artigo"
+
+#: foodnaut/articles/models.py:87
+#, fuzzy
+#| msgid "Articles"
+msgid "Article Comments"
+msgstr "Artigos"
+
+#: foodnaut/articles/templates/articles/article.html:20
+#, fuzzy
+msgid "Edit Article"
+msgstr "Escrever Artigo"
+
+#: foodnaut/articles/templates/articles/articles.html:14
+#: foodnaut/articles/templates/articles/write.html:12
+#, fuzzy
+msgid "Write Article"
+msgstr "Escrever Artigo"
+
+#: foodnaut/articles/templates/articles/articles.html:16
+#: foodnaut/articles/templates/articles/drafts.html:12
+#: foodnaut/articles/templates/articles/edit.html:12
+msgid "Drafts"
+msgstr "Rascunhos"
+
+#: foodnaut/articles/templates/articles/articles.html:25
+msgid "There is no published article yet"
+msgstr "Não há artigo publicado ainda"
+
+#: foodnaut/articles/templates/articles/articles.html:25
+msgid "Be the first one to publish"
+msgstr "Seja o primeiro a publicar"
+
+#: foodnaut/articles/templates/articles/articles.html:30
+msgid "Popular Tags"
+msgstr "Tags populares"
+
+#: foodnaut/articles/templates/articles/drafts.html:17
+#, fuzzy
+msgid "Title"
+msgstr "Meu titulo"
+
+#: foodnaut/articles/templates/articles/drafts.html:18
+msgid "Content"
+msgstr "Conteúdo"
+
+#: foodnaut/articles/templates/articles/drafts.html:19
+msgid "Tags"
+msgstr "Tags"
+
+#: foodnaut/articles/templates/articles/drafts.html:36
+msgid "No draft to display"
+msgstr "Nenhum rascunho para exibir"
+
+#: foodnaut/articles/templates/articles/edit.html:13
+msgid "Edit"
+msgstr "Editar"
+
+#: foodnaut/articles/templates/articles/edit.html:34
+#: foodnaut/articles/templates/articles/write.html:33
+msgid "Publish"
+msgstr "Publicar"
+
+#: foodnaut/articles/templates/articles/edit.html:35
+#: foodnaut/articles/templates/articles/write.html:34
+msgid "Save Draft"
+msgstr "Salvar rascunho"
+
+#: foodnaut/articles/templates/articles/edit.html:36
+#: foodnaut/articles/templates/articles/write.html:36
+#: foodnaut/feeds/templates/feeds/feeds.html:41
+#: foodnaut/questions/templates/questions/ask.html:31
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: foodnaut/articles/templates/articles/partial_article_comments.html:3
+#, fuzzy
+#| msgid "Press Ctrl + P to compose"
+msgid "Press Ctrl + Enter to post"
+msgstr "Pressione Ctrl + P para escrever"
+
+#: foodnaut/articles/templates/articles/partial_article_comments.html:4
+#: foodnaut/core/templates/core/profile.html:34
+#, fuzzy
+#| msgid "Comment"
+msgid "Comments"
+msgstr "Comentário"
+
+#: foodnaut/articles/templates/articles/partial_article_comments.html:13
+#: foodnaut/feeds/templates/feeds/partial_feed.html:36
+msgid "Write a comment..."
+msgstr "Escrever um comentário"
+
+#: foodnaut/articles/templates/articles/partial_article_comments.html:21
+#, fuzzy
+#| msgid "Be the first one to comment"
+msgid "Be the first one to comment!"
+msgstr "Seja o primeiro a comentar"
+
+#: foodnaut/articles/templates/articles/write.html:35
+msgid "Preview"
+msgstr ""
+
+#: foodnaut/authentication/templates/authentication/signup.html:12
+#: foodnaut/core/templates/core/cover.html:41
+msgid "Sign up for foodnaut"
+msgstr ""
+
+#: foodnaut/authentication/templates/authentication/signup.html:27
+msgid "Create an account"
+msgstr "Criar uma conta"
+
+#: foodnaut/core/templates/core/cover.html:22
+#: foodnaut/core/templates/core/cover.html:40
+#, fuzzy
+msgid "Log in"
+msgstr "Entrar"
+
+#: foodnaut/core/templates/core/cover.html:26
+#: foodnaut/core/templates/core/network.html:29
+msgid "Username"
+msgstr "Nome de usuário"
+
+#: foodnaut/core/templates/core/cover.html:33
+#: foodnaut/core/templates/core/partial_settings_menu.html:5
+msgid "Password"
+msgstr "Senha"
+
+#: foodnaut/core/templates/core/network.html:5 foodnaut/templates/base.html:48
+msgid "Network"
+msgstr "Rede"
+
+#: foodnaut/core/templates/core/network.html:27
+#, fuzzy
+msgid "Job Title"
+msgstr "Cargo"
+
+#: foodnaut/core/templates/core/network.html:31
+msgid "Location"
+msgstr "Localização"
+
+#: foodnaut/core/templates/core/network.html:34
+msgid "Url"
+msgstr ""
+
+#: foodnaut/core/templates/core/partial_settings_menu.html:3
+msgid "Profile"
+msgstr "Perfil"
+
+#: foodnaut/core/templates/core/partial_settings_menu.html:4
+msgid "Picture"
+msgstr "Foto"
+
+#: foodnaut/core/templates/core/password.html:4
+#: foodnaut/core/templates/core/password.html:8
+#: foodnaut/core/templates/core/picture.html:5
+#: foodnaut/core/templates/core/picture.html:15
+#: foodnaut/core/templates/core/settings.html:10
+#: foodnaut/templates/base.html:76
+msgid "Account Settings"
+msgstr "Configuração da conta"
+
+#: foodnaut/core/templates/core/password.html:23
+msgid "Change Password"
+msgstr "Trocar senha"
+
+#: foodnaut/core/templates/core/password.html:43
+#: foodnaut/core/templates/core/settings.html:57
+msgid "Save"
+msgstr "Salvar"
+
+#: foodnaut/core/templates/core/picture.html:30
+msgid "Change Picture"
+msgstr "Trocar foto"
+
+#: foodnaut/core/templates/core/picture.html:35
+msgid "Upload new picture"
+msgstr "Carregar nova foto"
+
+#: foodnaut/core/templates/core/picture.html:46
+msgid "Crop Picture"
+msgstr "Recortar foto"
+
+#: foodnaut/core/templates/core/picture.html:50
+msgid "Crop the profile picture and then click on the"
+msgstr "Recorte a foto do seu perfil, e em seguida, clique no"
+
+#: foodnaut/core/templates/core/picture.html:50
+msgid "Save Picture"
+msgstr "Salvar foto"
+
+#: foodnaut/core/templates/core/picture.html:50
+msgid "button"
+msgstr "botão"
+
+#: foodnaut/core/templates/core/picture.html:65
+msgid "Close"
+msgstr "Fechar"
+
+#: foodnaut/core/templates/core/picture.html:66
+msgid "Save changes"
+msgstr "Salvar alterações"
+
+#: foodnaut/core/templates/core/profile.html:26 foodnaut/feeds/models.py:24
+msgid "Feeds"
+msgstr ""
+
+#: foodnaut/core/templates/core/profile.html:38
+#: foodnaut/questions/templates/questions/ask.html:6
+#: foodnaut/questions/templates/questions/question.html:14
+#: foodnaut/questions/templates/questions/questions.html:17
+#: foodnaut/search/templates/search/partial_questions_results.html:4
+#: foodnaut/search/templates/search/partial_results_menu.html:13
+msgid "Questions"
+msgstr "Perguntas"
+
+#: foodnaut/core/templates/core/profile.html:42
+#, fuzzy
+#| msgid "Answered"
+msgid "Answers"
+msgstr "Respondida"
+
+#: foodnaut/core/templates/core/profile.html:46
+msgid "Global Interactions"
+msgstr ""
+
+#: foodnaut/core/templates/core/profile.html:71
+#, fuzzy
+#| msgid "Last Feeds by"
+msgid "Last Feeds"
+msgstr "Últimos Feeds por"
+
+#: foodnaut/core/templates/core/settings.html:25
+msgid "Edit Profile"
+msgstr "Editar Perfil"
+
+#: foodnaut/feeds/models.py:23 foodnaut/feeds/templates/feeds/feed.html:7
+#: foodnaut/feeds/templates/feeds/feeds.html:20
+#: foodnaut/search/templates/search/partial_feed_results.html:4
+#: foodnaut/search/templates/search/partial_results_menu.html:5
+#: foodnaut/templates/base.html:45
+msgid "Feed"
+msgstr ""
+
+#: foodnaut/feeds/templates/feeds/feeds.html:17
+msgid "Press Ctrl + P to compose"
+msgstr "Pressione Ctrl + P para escrever"
+
+#: foodnaut/feeds/templates/feeds/feeds.html:18
+msgid "Compose"
+msgstr "Escrever"
+
+#: foodnaut/feeds/templates/feeds/feeds.html:25
+#, fuzzy
+#| msgid "new posts"
+msgid "Latest posts"
+msgstr "novas postagens"
+
+#: foodnaut/feeds/templates/feeds/feeds.html:30
+msgid "Compose a new post"
+msgstr "Escrever uma nova postagem"
+
+#: foodnaut/feeds/templates/feeds/feeds.html:39
+msgid "Post"
+msgstr "Postagem"
+
+#: foodnaut/feeds/templates/feeds/feeds.html:47
+msgid "new posts"
+msgstr "novas postagens"
+
+#: foodnaut/feeds/templates/feeds/partial_feed.html:9
+msgid "Click to remove this feed"
+msgstr "Clique para remover o feed"
+
+#: foodnaut/feeds/templates/feeds/partial_feed.html:17
+msgid "Unlike"
+msgstr "Não gostei"
+
+#: foodnaut/feeds/templates/feeds/partial_feed.html:23
+msgid "Like"
+msgstr "Gostei"
+
+#: foodnaut/feeds/templates/feeds/partial_feed.html:28
+msgid "Comment"
+msgstr "Comentário"
+
+#: foodnaut/feeds/templates/feeds/partial_feed_comments.html:7
+#, fuzzy
+#| msgid "Click to remove this feed"
+msgid "Click to remove this comment"
+msgstr "Clique para remover o feed"
+
+#: foodnaut/feeds/templates/feeds/partial_feed_comments.html:21
+msgid "Be the first one to comment"
+msgstr "Seja o primeiro a comentar"
+
+#: foodnaut/messenger/models.py:20
+msgid "Message"
+msgstr ""
+
+#: foodnaut/messenger/models.py:21
+msgid "Messages"
+msgstr ""
+
+#: foodnaut/messenger/templates/messenger/inbox.html:4
+#: foodnaut/messenger/templates/messenger/inbox.html:6
+msgid "Inbox"
+msgstr ""
+
+#: foodnaut/messenger/templates/messenger/inbox.html:15
+msgid "This is the begining of a great new conversation."
+msgstr ""
+
+#: foodnaut/messenger/templates/messenger/inbox.html:16
+msgid "Let's get started now!"
+msgstr ""
+
+#: foodnaut/questions/templates/questions/ask.html:7
+#: foodnaut/questions/templates/questions/questions.html:15
+msgid "Ask Question"
+msgstr "Pergunte"
+
+#: foodnaut/questions/templates/questions/ask.html:30
+msgid "Post Your Question"
+msgstr "Poste sua pergunta"
+
+#: foodnaut/questions/templates/questions/partial_answer.html:7
+#: foodnaut/questions/templates/questions/question.html:20
+msgid "Click to up vote; click again to toggle"
+msgstr "Clique para votar; clique novamente para alterar"
+
+#: foodnaut/questions/templates/questions/partial_answer.html:9
+#: foodnaut/questions/templates/questions/question.html:22
+msgid "Click to down vote; click again to toggle"
+msgstr "Clique para votar; clique novamente para alterar"
+
+#: foodnaut/questions/templates/questions/partial_answer.html:11
+msgid "Click to unaccept the answer"
+msgstr ""
+
+#: foodnaut/questions/templates/questions/partial_answer.html:15
+msgid "Click to accept the answer"
+msgstr "Clique caso não queira aceitar essa resposta"
+
+#: foodnaut/questions/templates/questions/partial_answer.html:22
+msgid "answered"
+msgstr "respondidas"
+
+#: foodnaut/questions/templates/questions/question.html:15
+msgid "Question"
+msgstr "Pergunta"
+
+#: foodnaut/questions/templates/questions/question.html:63
+msgid "Post Your Answer"
+msgstr "Postar sua resposta"
+
+#: foodnaut/questions/templates/questions/questions.html:21
+msgid "Unanswered"
+msgstr "Sem resposta"
+
+#: foodnaut/questions/templates/questions/questions.html:22
+msgid "Answered"
+msgstr "Respondida"
+
+#: foodnaut/questions/templates/questions/questions.html:23
+msgid "All Questions"
+msgstr "Todas as perguntas"
+
+#: foodnaut/questions/templates/questions/questions.html:28
+msgid "No questions to display. "
+msgstr "Nenhuma pergunta para exibir"
+
+#: foodnaut/search/templates/search/partial_articles_results.html:24
+msgid "No article found"
+msgstr ""
+
+#: foodnaut/search/templates/search/partial_feed_results.html:23
+msgid "No feed found"
+msgstr ""
+
+#: foodnaut/search/templates/search/partial_questions_results.html:22
+#, fuzzy
+#| msgid "No questions to display. "
+msgid "No question found"
+msgstr "Nenhuma pergunta para exibir"
+
+#: foodnaut/search/templates/search/partial_results_menu.html:17
+#: foodnaut/search/templates/search/partial_users_results.html:3
+#, fuzzy
+#| msgid "Username"
+msgid "Users"
+msgstr "Nome de usuário"
+
+#: foodnaut/search/templates/search/partial_users_results.html:19
+msgid "No user found"
+msgstr ""
+
+#: foodnaut/search/templates/search/results.html:17
+#: foodnaut/search/templates/search/search.html:22
+msgid "Search"
+msgstr ""
+
+#: foodnaut/search/templates/search/results.html:23
+#: foodnaut/search/templates/search/search.html:19
+msgid "Search Feed, Articles, Questions and Users"
+msgstr ""
+
+#: foodnaut/templates/base.html:47
+msgid "Q&A"
+msgstr ""
+
+#: foodnaut/templates/base.html:75
+#, fuzzy
+#| msgid "Profile"
+msgid "My Profile"
+msgstr "Perfil"
+
+#: foodnaut/templates/base.html:78
+msgid "Log out"
+msgstr "Sair"
+
+#~ msgid "Tag"
+#~ msgstr "Tag"

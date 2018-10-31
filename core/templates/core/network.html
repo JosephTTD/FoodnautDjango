@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans 'Network' %}{% endblock %}
+
+{% block head %}
+  <link href="{% static 'css/network.css' %}" rel="stylesheet">
+  <link href="{% static 'css/feed.css' %}" rel="stylesheet">
+{% endblock head %}
+
+{% block main %}
+<div class="col-md-10 col-md-offset-2">
+  <br><br><br>
+  <div Style="font-size: 16px; font-weight: 100;">
+    <span>
+            <svg xmlns="http://www.w3.org/2000/svg" style="position: " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            <span style="position: absolute; margin-top: 5px; margin-left: 10px;">discover</span>
+          </span>
+  </div>
+  <div class="users">
+
+    <div class="row">
+      <div class="col-md-12">
+     <!-- Swiper -->
+  <div class="swiper-container slideLeft" style="height:150px; margin-top: 0;">
+      <div class="swiper-wrapper" style="font-weight: 700; cursor: pointer;">
+        {% for user in users %}
+<div class="swiper-slide" id="user-opa" style="background-image: url('{{ user.profile.get_picture }}'); width: 200px; font-weight: 300; padding: 8px 15px; color: #fff; border: ; font-size: 12px; border-radius: 3px; margin-right: 20px !important;">
+  <a class="recipename" style=";" href="{% url 'profile' user.username %}">@ {{ user.profile.get_screen_name }}</a>
+  <div class="panel-body hidden">
+    {% if user.profile.job_title %}
+      <p><strong>{% trans 'Job Title' %}:</strong> {{ user.profile.job_title }}</p>
+    {% endif %}
+    <p><strong>{% trans 'Username' %}: </strong> {{ user.username }}</p>
+    {% if user.profile.location %}
+      <p><strong>{% trans 'Location' %}:</strong> {{ user.profile.location }}</p>
+    {% endif %}
+    {% if user.profile.url %}
+      <p><strong>{% trans 'Url' %}:</strong> {{ user.profile.get_url }}</p>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+</div>
+  </div>
+
+  </div>
+      <!-- Add Scrollbar -->
+      <div class="swiper-scrollbar" style="background-color: none;"></div>
+  </div>
+</div>
+      <!--  <div class="col-md-4">
+          <div class="panel panel-default">
+              <img src="{{ user.profile.get_picture }}" style="width:60px; border-radius: 100px;">
+              <a style="font-size: 14px;" href="{% url 'profile' user.username %}">{{ user.profile.get_screen_name }}</a> -->
+
+
+
+  <!--  <div class="row">
+      <div class="col-md-12 text-center">
+        {% include 'paginator.html' with paginator=users %}
+      </div>
+    </div> -->
+
+  </div>
+</div>
+{% endblock main %}

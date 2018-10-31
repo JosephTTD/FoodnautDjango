@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% load humanize %}
+
+{% block title %} Search {% endblock %}
+
+{% block head %}
+  <link href="{% static 'css/search.css' %}" rel="stylesheet">
+  <script src="{% static 'js/search.js' %}"></script>
+{% endblock head %}
+
+{% block main %}
+  <div class="" style="margin-top: 70px;">
+    <div class="row">
+      <div class="col-md-3">
+        <p></p>
+      </div>
+      <div class="col-md-9">
+        <form role="search" action="{% url 'search' %}">
+          <input type="hidden" name="type" value="{{ active }}">
+          <h3>{% trans 'Search Results' %}</h3>
+          <div class="">
+            <svg xmlns="http://www.w3.org/2000/svg"  style="position: absolute; margin: 10px 9px;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c6c6c6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input style="font-size: 16px; width: 100%" type="text" id="auto-search" class="form-control" name="q" placeholder="{% trans 'Search Feed. Questions and Users' %}" value="{{ querystring }}">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row results">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+      <div>{% include 'search/partial_results_menu.html' with active=active count=count querystring=querystring %}</div>
+      {% if active == 'feed' %}
+        {% include 'search/partial_feed_results.html' with results=results %}
+      {% elif active == 'articles' %}
+        {% include 'search/partial_articles_results.html' with results=results %}
+      {% elif active == 'questions' %}
+        {% include 'search/partial_questions_results.html' with results=results %}
+      {% elif active == 'users' %}
+        {% include 'search/partial_users_results.html' with results=results %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock main %}

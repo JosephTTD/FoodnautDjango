@@ -1,0 +1,209 @@
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Foodnaut{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+    <!-- For Ajax Search suggestion -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="{% static 'css/foodnaut.css' %}?v=1" rel="stylesheet">
+    <link href="{%  static 'css/font.css' %}" rel="stylesheet" />
+    <link href="{%  static 'css/style.css' %}" rel="stylesheet" />
+    <link href="{%  static 'css/icons.css' %}" rel="stylesheet" />
+    <link href="{%  static 'css/swiper.min.css' %}" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- For Ajax Search suggestion -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/foodnaut.js' %}"></script>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% block body %}
+      <header>
+
+
+        <div class="col-md-2 hidden-sm hidden-xs" style="padding: 12px 20px; position: fixed; height: 100%; margin-left: 00px !important; background: #fff6f5;">
+          <div class="user-profile" style="margin-top:20px; margin-left: 0px; ">
+          <a href="{% url 'profile' user.username %}"><img src="{{ user.profile.get_picture }} {{ feed.user.profile.get_picture }}" class="picture" style="vertical-align: middle; margin:auto; width: 50px; border-radius: 100px;"></a>
+          <!-- <span style="font-size: 19px;">{{ user.profile.get_screen_name }}</span><br> -->
+          &nbsp; <span> {% if user.get_full_name %} @{{ user.username }}.</small>{% endif %} </span>
+          &nbsp;
+          <a href="{% url 'settings'%}"><span>
+            <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; margin-top: 15px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </span>
+          <a href="{% url 'logout' %}"><span>
+            <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; margin-top: 15px; margin-left: 30px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </span></a>
+          <!-- Link bjects of the side navigation -->
+          <a href="{% url 'network'%}"><div class="sidenav-obj">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" style="position: " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              <span style="position: absolute; margin-top: 5px; margin-left: 10px;">discover</span>
+            </span>
+          </div></a>
+          <div class="sidenav-obj">
+            <a href="{% url 'questions'%}"><span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span style="position: absolute; margin-top: 5px; margin-left: 10px;">questions</span>
+            </span></a>
+          </div>
+          <div class="sidenav-obj">
+            <a href="{% url 'feeds' %}"><span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span style="position: absolute; margin-top: 5px; margin-left: 10px;">feed</span>
+            </span></a>
+          </div>
+          <div class="sidenav-obj">
+            <a href=""><span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="12" r="10"/><line x1="12" y1="17" x2="12" y2="17"/></svg>
+              <span style="position: absolute; margin-top: 5px; margin-left: 10px;">help</span>
+            </span></a>
+          </div><br><br>
+          <div class="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cc6633" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              <span style="position: absolute; margin-top: 5px; margin-left: 10px; color: #cc6633">Version 1.01 alpha</span>
+          </div>
+          </div>
+          </div>
+
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="" data-target="#menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#717171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="7" y1="6" x2="21" y2="6"/><line x1="7" y1="18" x2="21" y2="18"/></svg>
+            </button>
+          <!--  <a class="hidden-sm hidden-xs navbar-brand" href="{% url 'home' %}"><img style="width:36px; position: absolute;margin-left: 15px; margin-top: -10px;" src="{% static 'img/foodnaut-logo.svg' %}"></a> -->
+            <a class="hidden-lg hidden-md navbar-brand" style="font-size: 25px; position: absolute;" href="{% url 'search' %}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#717171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </a>
+          </div>
+        <!--  {% if not hide_search %}
+            <form class="navbar-form navbar-left hidden-sm hidden-xs" role="search" action="{% url 'search' %}">
+              <div class="input-group" style="width:410px; margin-left: 30px;">
+                <input type="text" style="border: none; font-size: 13.5pt; box-shadow: none;" class="form-control" id="auto-search" name="q" placeholder="What are you looking for?">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-default" style="border: none;"><span class="icon-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </span></button>
+                </span>
+              </div>
+            </form> -->
+          {% endif %}
+          <!-- JQuery code for Ajax autocomplete search suggestion -->
+          <script type="text/javascript">
+            $(function() {
+                $("#auto-search").autocomplete({
+                    source: "{% url 'autocomplete' %}",
+                    minLength: 2
+                });
+            });
+          </script>
+      <!-- End JQuery code for Ajax autocomplete search suggestion -->
+            <ul class="nav navbar-nav navbar-right">
+          <div class="collapse navbar-collapse" id="menu">
+          <ul class="nav navbar-nav hidden-sm hidden-xs">
+            <li><a href="{% url 'search' %}"><span style="font-size: 22px" class="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span></a></li>
+            <li>
+            <li><a href="{% url 'feeds' %}"><span style="font-size: 22px" class="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            </span></a></li>
+            <li>
+              <a href="#" id="notifications" style="" data-container="body" data-toggle="popover" data-placement="bottom" title="Notifications">
+                <span class="">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
+                </span>
+              </a>
+            </li>
+            <li><a href="{% url 'articles' %}" class="hidden">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </span>
+            </a></li>
+            <li><a href="{% url 'questions' %}" class="hidden">{% trans 'Q+A' %}</a></li>
+            <li><a href="{% url 'network' %}"><span style="font-size: 25px" class="">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>-->
+            </span></a></li>
+            <!-- <li><a href="{% url 'inbox' %}">Inbox  <span class="badge" id="unread-count">0</span></a></li>-->
+            <!--  <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ user.profile.get_picture }}" class="user"><b style="color: transparent;" data-feather="dropdown" class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'profile' user.username %}">{% trans 'My Profile' %}</a></li><br>
+                  <li><a href="{% url 'settings' %}">{% trans 'Account Settings' %}</a></li><br>
+                  <li><a href="">{% trans 'Help' %}</a></li><br>
+                  <li><a class="btn-default" href="{% url 'logout' %}">{% trans 'Log out' %}</a></li>
+                </ul>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+      </header>
+      <main>
+        <div class="container">
+          {% block main %}
+          {% endblock main %}
+        </div>
+      </main>
+
+<footer style="position: fixed;">
+      <div class="col-xs-12 navbar-inverse navbar-fixed-bottom hidden-lg hidden-md">
+<div class="row" id="bottomNav">
+  <div class="col-xs-3 text-center"><a href="{% url 'feeds' %}"><i class=".bottomNav-icons" style=""><svg xmlns="http://www.w3.org/2000/svg" style="position: ;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></i><br><span style="font-size:9px; margin-top: -4px; display: block;"></span></a></div>
+  <div class="col-xs-3 text-center"><a href="{% url 'network' %}"><i class=".bottomNav-icons" style=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></i><span style="font-size:9px; margin-top: -4px; display: block;"></span></a></div>
+  <div class="col-xs-3 text-center" data-toggle="modal" data-target="#notifs"><a id="" title="" href="{% url 'notifications' %}"><i data-feather="bell" class=".bottomNav-icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg></i><br><span style="font-size:9px; margin-top: -4px; display: block;"></span></a></div>
+<div class="col-xs-3 text-center" data-target="#account" data-toggle="modal"><a href="#"><i data-feather="user" class=".bottomNav-icons" style=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></i><br><span style="font-size:9px; margin-top: -4px; display: block;"></span></a></div>
+</div>
+</div>
+</footer>
+
+<div class="modal fade in" id="account" tabindex="-1" role="dialog">
+<div class="modal-dialog" style="height: whatever;" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="material-icons" style="letter-spacing: 0; opacity: 1 !important;">close</i></span></button>
+    <p class="modal-title" style="font-size: 15px;">{% trans 'Go to Your Account' %}</p>
+  </div>
+  <div class="modal-body" style="text-align: center; padding: 40px; overflow-y: auto;">
+      <a href="{% url 'profile' user.username %}"><button style="border: none; font-size: 16px;" class="btn-default btn">{% trans 'My Profile' %}</button></a><br>
+      <a href="{% url 'settings' %}"><button style="border: none; font-size: 16px;" class="btn-default btn">{% trans 'Account Settings' %}</button></a><br>
+      <a href=""><button style="border: none; font-size: 16px;" class="btn-default btn">{% trans 'Help' %}</button></a><br>
+      <a class="btn-default" href="{% url 'logout' %}"><button style="border: none; font-size: 16px;" class="btn-default btn">{% trans 'Log out' %}</button></a>
+</div>
+  <div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+
+      <script src="{% static 'js/notifications.js' %}"></script>
+      <script src="{% static 'js/check_messages.js' %}"></script>
+    {% endblock body %}
+    <script src="{% static 'js/ga.js' %}"></script>
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script>
+  var swiper = new Swiper('.swiper-container', {
+      scrollbar: '.swiper-scrollbar',
+      scrollbarHide: true,
+      slidesPerView: 4,
+      spaceBetween: 'auto',
+      grabCursor: true
+  });
+  </script>
+  </body>
+</html>

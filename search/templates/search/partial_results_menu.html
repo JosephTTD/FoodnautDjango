@@ -1,0 +1,16 @@
+{% load i18n %}
+
+<div class="">
+  <a href="{% url 'search' %}?q={{ querystring }}&type=feed" class="{% if active == 'feed' %} active{% endif %}">
+    <button style=" " class="search-tip">{% trans 'Feed' %}&nbsp;<span style="color: #333; font-weight: 100; background-color: transparent; font-size:16px; " class="badge">| {{ count.feed }}</span></button>
+  </a>
+  <a href="{% url 'search' %}?q={{ querystring }}&type=articles" class="hidden{% if active == 'articles' %} active{% endif %}">
+    <button style="padding: 4px 7px;" class="btn">{% trans 'Articles' %}&nbsp;<span style="color: #333; font-weight: 100; background-color: transparent; font-size:16px; " class="badge">{{ count.articles }}</span></button>
+  </a>
+  <a href="{% url 'search' %}?q={{ querystring }}&type=questions" class="{% if active == 'questions' %} active{% endif %}">
+    <button style=" " class="search-tip">{% trans 'Questions' %}&nbsp;<span style="color: #333; font-weight: 100; background-color: transparent; font-size:16px; " class="badge">| {{ count.questions }}</span></button>
+  </a>
+  <a href="{% url 'search' %}?q={{ querystring }}&type=users" class="{% if active == 'users' %} active{% endif %}">
+    <button style="" class="search-tip">{% trans 'Users' %}&nbsp;<span style="color: #333; font-weight: 100; background-color: transparent; font-size:16px; " class="badge">| {{ count.users }}</span></button>
+  </a>
+</div>

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head %}
+  <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+  <link href="{% static 'css/swiper.min.css' %}" rel="stylesheet">
+{% endblock head %}
+
+{% block body %}
+<a class=" " href="{% url 'home' %}"></a>
+  <div class="cover">
+    {% if form.non_field_errors %}
+      {% for error in form.non_field_errors %}
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          {{ error }}
+        </div>
+      {% endfor %}
+    {% endif %}
+
+  <!--  <div class="login">
+      <h3 class="text-center">{% trans 'Welcome back' %}</h3>
+      <form method="post" action="{% url 'login' %}" role="form">
+        {% csrf_token %}
+        <div class="form-group{% if form.username.errors %} has-error{% endif %}">
+          <input type="text" placeholder="Your Username" class="form-control" id="username" name="username">
+          {% for error in form.username.errors %}
+            <label class="control-label">{{ error }}</label>
+          {% endfor %}
+        </div>
+        <div class="form-group{% if form.password.errors %} has-error{% endif %}">
+          <input type="password" placeholder="Password" class="form-control" id="password" name="password">
+          {% for error in form.password.errors %}
+            <label class="control-label">{{ error }}</label>
+          {% endfor %}
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" style="width: 100%">{% trans 'Log in' %}</button>
+          <a href="{% url 'signup' %}" style="width: 100%" class="btn btn-link">{% trans 'Sign up for Foodnaut' %}</a>
+        </div>
+      </form>
+    </div> -->
+  </div>
+
+  <div class="col-md-8 copper-bg solobow hidden-sm hidden-xs">
+    <div style="margin-left: 110px; margin-top: 160px;">
+    <div class="headline">discover food,</div>
+    <div class="headline headline-right">the right way</div>
+    <h4 style="margin-top:80px">foodnaut is a diverse community of foodies, we have taken our <br> passion for food and created
+      a platform to grow and thrive, for the <br>love of all that is food.
+    </h4><br><br><br>
+    <button type="button" class="land-btn" style="width: 100%">{% trans 'When can I sign up?' %}</button>
+    </div>
+  </div>
+
+  <div class="col-md-4" style="color: #cc6633;">
+    <div class="login">
+        <h2 style="color: #cc6633">{% trans 'Sign In' %}</h2><br>
+        <form method="post" action="{% url 'login' %}" role="form">
+          {% csrf_token %}
+          <div class="form-group{% if form.username.errors %} has-error{% endif %}">
+            {% for error in form.username.errors %}
+              <label class="control-label">{{ error }}</label>
+            {% endfor %}
+            <input type="text" placeholder="Username" class="form-control" id="username" name="username">
+          </div>
+          <div class="form-group{% if form.password.errors %} has-error{% endif %}">
+            {% for error in form.password.errors %}
+              <label class="control-label">{{ error }}</label>
+            {% endfor %}
+            <input type="password" placeholder="Password" class="form-control" id="password" name="password">
+          </div>
+          <br>
+          <div class="icon-split">
+            <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cc6633" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <span style="margin-left: 70px">discover food the right way</span>
+          </div>
+          <div class="icon-split">
+            <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cc6633" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            <span style="margin-left: 70px">connect with foodies</span>
+          </div>
+          <div class="icon-split">
+            <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#cc6633" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <span style="margin-left: 70px">share your love of food</span>
+          </div>
+          <br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default" style="width: 100%">{% trans 'Sign In' %}</button>
+          </div>
+        </form>
+      </div>
+  </div>
+{% endblock body %}
