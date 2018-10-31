@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Segment Circular Std';
+  src: local('Circular Std Book'),
+       local('CircularStd-Book'),
+       url('https://static.segment.com/fonts/circular/circular-std-book.woff2') format('woff2'),
+       url('https://static.segment.com/fonts/circular/circular-std-book.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Segment Circular Std';
+  src: local('Circular Std Book Italic'),
+       local('CircularStd-BookItalic'),
+       url('https://static.segment.com/fonts/circular/circular-std-book-italic.woff2') format('woff2'),
+       url('https://static.segment.com/fonts/circular/circular-std-book-italic.woff') format('woff');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Segment Circular Std';
+  src: local('Circular Std Medium'),
+       local('CircularStd-Medium'),
+       url('https://static.segment.com/fonts/circular/circular-std-medium.woff2') format('woff2'),
+       url('https://static.segment.com/fonts/circular/circular-std-medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Segment Circular Std';
+  src: local('Circular Std Bold'),
+       local('CircularStd-Bold'),
+       url('https://static.segment.com/fonts/circular/circular-std-bold.woff2') format('woff2'),
+       url('https://static.segment.com/fonts/circular/circular-std-bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Segment Circular Std';
+  src: local('Circular Std Black'),
+       local('CircularStd-Black'),
+       url('https://static.segment.com/fonts/circular/circular-std-black.woff2') format('woff2'),
+       url('https://static.segment.com/fonts/circular/circular-std-black.woff') format('woff');
+  font-style: normal;
+  font-weight: 900;
+}
